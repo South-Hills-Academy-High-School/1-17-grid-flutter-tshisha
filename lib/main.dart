@@ -29,7 +29,23 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Hello!'),
+      body: GridView.builder(
+        gridDelegate: SilverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+        ), 
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(8),
+            child: Container(
+              height: 50,
+              width: 50,
+              color: Colors.blueGrey[700],
+              child: Image(image:Image.network('')),
+            ),
+          );
+        },
+
+      ),
     );
   }
 }
